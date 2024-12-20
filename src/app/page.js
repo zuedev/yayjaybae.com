@@ -7,7 +7,7 @@ export default () => {
     <div className="h-screen">
       <img
         src="/images/duo-portrait/base.png"
-        className="h-full object-cover"
+        className="h-full object-cover w-full"
       />
       <img
         src="/images/wordprint.png"
