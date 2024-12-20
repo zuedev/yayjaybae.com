@@ -25,7 +25,7 @@ export default () => {
           animate={{ left: 0, transition: { duration: 2 } }}
         >
           <img src="/images/DubbyCup.png" className="w-[100px]" />
-          <span className="flex flex-col text-white text-4xl font-bold uppercase">
+          <span className="flex flex-col text-[yellow] text-4xl font-bold uppercase">
             <span className="w-fit px-2 py-1 bg-black">Tap</span>
             <span className="w-fit px-2 py-1 bg-black">to</span>
             <span className="w-fit px-2 py-1 bg-black">pre-order</span>
