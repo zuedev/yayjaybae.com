@@ -1,7 +1,10 @@
 export default () => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <h1 className="text-4xl font-bold text-white">Reference Page WIP</h1>
-    </div>
+    <>
+      <img
+        src={`/images/jay-xenia-reference-sheet.png`}
+        className="h-full object-cover w-full"
+      />
+    </>
   );
 };

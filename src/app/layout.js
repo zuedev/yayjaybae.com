@@ -1,7 +1,6 @@
 import { Poetsen_One } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
-import Socials from "@/components/Socials";
 import Head from "next/head";
 
 const FontMain = Poetsen_One({
@@ -30,7 +29,6 @@ export default ({ children }) => {
       <body className={`${FontMain.className} antialiased`}>
         <Navigation />
         {children}
-        <Socials />
       </body>
     </html>
   );
