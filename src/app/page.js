@@ -13,6 +13,11 @@ export default () => {
         src="/images/wordprint.png"
         className="absolute transform top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-2xl"
       />
+      {/* 
+        dubby auto-discount link
+
+        pattern: dubby.gg/discount/<code>?redirect=/products/<product>
+      */}
       <a href="https://www.dubby.gg/discount/yayjaybae?redirect=/products/dubble-trouble-yayjaybae-limited-edition-shaker">
         <motion.div
           className="absolute bottom-20 left-0 z-10 flex flex-row items-center md:space-x-4 md:p-4 transform hover:scale-110 transition-transform"
