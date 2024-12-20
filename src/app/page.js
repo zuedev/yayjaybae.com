@@ -3,10 +3,12 @@
 import { motion } from "motion/react";
 
 export default () => {
+  const file = Math.random() > 0.5 ? "base" : "maid";
+
   return (
     <div className="h-screen">
       <img
-        src="/images/duo-portrait/base.png"
+        src={`/images/duo-portrait/${file}.png`}
         className="h-full object-cover w-full"
       />
       <img
