@@ -24,7 +24,7 @@ export default () => {
   }
 
   return (
-    <div className="fixed w-full z-10">
+    <div className="sticky top-0">
       {/* desktop navigation */}
       <div className="flex flex-row justify-between p-4 bg-black text-white border-b-2 border-white hidden lg:flex">
         {links.map((link) => (
