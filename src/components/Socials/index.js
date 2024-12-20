@@ -58,7 +58,11 @@ export default () => {
             key={social.title}
             className="transform hover:scale-125 transition-transform"
           >
-            <img src={`${social.icon}`} className="h-8" title={social.title} />
+            <img
+              src={`${social.icon}`}
+              className="h-6 sm:h-8"
+              title={social.title}
+            />
           </Link>
         ))}
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default () => {
   const links = [
@@ -11,6 +12,12 @@ export default () => {
     { href: "/gallery", label: "Gallery" },
     { href: "/contact", label: "Contact" },
   ];
+
+  const pathname = usePathname();
+
+  for (const link of links) {
+    link.active = link.url === pathname;
+  }
 
   function handleSelectChange(event) {
     window.location.href = event.target.value;
@@ -38,6 +45,7 @@ export default () => {
         <select
           className="text-xl uppercase bg-black text-white"
           onChange={handleSelectChange}
+          defaultValue={pathname}
         >
           {links.map((link) => (
             <option key={link.label} value={link.href}>

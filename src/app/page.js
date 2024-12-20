@@ -11,11 +11,11 @@ export default () => {
       />
       <img
         src="/images/wordprint.png"
-        className="absolute transform top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-sm md:max-w-xl lg:max-w-2xl"
+        className="absolute transform top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-2xl"
       />
       <a href="https://www.dubbycup.com/">
         <motion.div
-          className="absolute bottom-20 left-0 z-10 flex flex-row items-center space-x-4 p-4 transform hover:scale-110 transition-transform"
+          className="absolute bottom-20 left-0 z-10 flex flex-row items-center md:space-x-4 md:p-4 transform hover:scale-110 transition-transform"
           initial={{ left: "-100%" }}
           animate={{ left: 0, transition: { duration: 2 } }}
         >
