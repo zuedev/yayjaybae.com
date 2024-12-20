@@ -24,7 +24,7 @@ export default () => {
   }
 
   return (
-    <>
+    <div className="fixed w-full z-10">
       {/* desktop navigation */}
       <div className="flex flex-row justify-between p-4 bg-black text-white border-b-2 border-white hidden lg:flex">
         {links.map((link) => (
@@ -55,6 +55,6 @@ export default () => {
         </select>
         <img src="/images/flower-heart.png" className="w-8 h-8" />
       </div>
-    </>
+    </div>
   );
 };
