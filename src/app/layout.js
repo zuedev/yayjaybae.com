@@ -5,6 +5,7 @@ import Socials from "@/components/Socials";
 
 const FontMain = Poetsen_One({
   weight: "400",
+  subsets: ["latin"],
 });
 
 export const metadata = {
