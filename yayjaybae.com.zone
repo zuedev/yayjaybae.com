@@ -1,0 +1,44 @@
+;;
+;; Domain:     yayjaybae.com.
+;; Exported:   2025-01-15 00:32:00
+;;
+;; This file is intended for use for informational and archival
+;; purposes ONLY and MUST be edited before use on a production
+;; DNS server.  In particular, you must:
+;;   -- update the SOA record with the correct authoritative name server
+;;   -- update the SOA record with the contact e-mail address information
+;;   -- update the NS record(s) with the authoritative name servers for this domain.
+;;
+;; For further information, please consult the BIND documentation
+;; located on the following website:
+;;
+;; http://www.isc.org/
+;;
+;; And RFC 1035:
+;;
+;; http://www.ietf.org/rfc/rfc1035.txt
+;;
+;; Please note that we do NOT offer technical support for any use
+;; of this zone data, the BIND name server, or any other third-party
+;; DNS software.
+;;
+;; Use at your own risk.
+;; SOA Record
+yayjaybae.com	3600	IN	SOA	coleman.ns.cloudflare.com. dns.cloudflare.com. 2048856772 10000 2400 604800 3600
+
+;; NS Records
+yayjaybae.com.	86400	IN	NS	coleman.ns.cloudflare.com.
+yayjaybae.com.	86400	IN	NS	maria.ns.cloudflare.com.
+
+;; CNAME Records
+autoconfig.yayjaybae.com.	1	IN	CNAME	mail-in-a-box.zue.dev. ; cf_tags=cf-proxied:false
+autodiscover.yayjaybae.com.	1	IN	CNAME	mail-in-a-box.zue.dev. ; cf_tags=cf-proxied:false
+www.yayjaybae.com.	1	IN	CNAME	www-yayjaybae-com.pages.dev. ; cf_tags=cf-proxied:true
+yayjaybae.com.	1	IN	CNAME	www-yayjaybae-com.pages.dev. ; cf_tags=cf-proxied:true
+
+;; MX Records
+yayjaybae.com.	1	IN	MX	10 mail-in-a-box.zue.dev.
+
+;; TXT Records
+_dmarc.yayjaybae.com.	1	IN	TXT	"v=DMARC1;  p=none; rua=mailto:f59211af4bb04e95b0edeb938dd20fb6@dmarc-reports.cloudflare.net"
+yayjaybae.com.	1	IN	TXT	"v=spf1 include:mail-in-a-box.zue.dev ~all"
