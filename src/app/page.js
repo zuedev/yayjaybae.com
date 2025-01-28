@@ -32,7 +32,7 @@ export default () => {
             <span className="flex flex-col text-[yellow] text-4xl font-bold uppercase">
               <span className="w-fit px-2 py-1 bg-black">Tap</span>
               <span className="w-fit px-2 py-1 bg-black">to</span>
-              <span className="w-fit px-2 py-1 bg-black">pre-order</span>
+              <span className="w-fit px-2 py-1 bg-black">order</span>
             </span>
           </motion.div>
         </a>
