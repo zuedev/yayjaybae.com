@@ -35,7 +35,7 @@ export default () => {
     <div className="flex flex-col items-center h-screen mt-8">
       <img
         src={`/images/YayJayBae Fan Art.png`}
-        className="max-w-4xl cursor-pointer"
+        className="max-w-4xl cursor-pointer w-full"
         onClick={handleImageClick}
       />
       {isModalOpen && (
