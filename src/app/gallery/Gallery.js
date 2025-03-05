@@ -1,11 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default (props) => {
   const { galleryFolders, galleryImages } = props;
 
   const [currentGallery, setGalleryFolders] = useState("");
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const closeModal = () => setSelectedImage(null);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        closeModal();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   return (
     <>
@@ -27,19 +43,30 @@ export default (props) => {
           (gallery) =>
             gallery.folder === currentGallery &&
             gallery.images.map((image) => (
-              <a
+              <div
                 key={image}
-                href={`/gallery/${gallery.folder}/${image}`}
-                target="_blank"
+                onClick={() =>
+                  setSelectedImage(`/gallery/${gallery.folder}/${image}`)
+                }
+                className="cursor-pointer"
               >
                 <img
-                  className="w-full h-64 object-cover hover:transform hover:scale-105 transition-transform"
+                  className="w-full h-64 object-cover hover:transform"
                   src={`/gallery/${gallery.folder}/${image}`}
+                  alt=""
                 />
-              </a>
+              </div>
             ))
         )}
       </div>
+      {selectedImage && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center"
+          onClick={closeModal}
+        >
+          <img src={selectedImage} className="max-w-full max-h-full" alt="" />
+        </div>
+      )}
     </>
   );
 };
