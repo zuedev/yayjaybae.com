@@ -33,12 +33,13 @@ body {
 }
 
 /* setup body default background */
-body {
+html {
   background: linear-gradient(
-    45deg,
-    var(--yjb-yellow) 0%,
-    var(--yjb-blue-dark) 33%,
-    var(--yjb-blue-dark) 66%,
-    var(--yjb-blue-light) 100%
-  );
+      45deg,
+      var(--yjb-yellow) 0%,
+      var(--yjb-blue-dark) 33%,
+      var(--yjb-blue-dark) 66%,
+      var(--yjb-blue-light) 100%
+    )
+    fixed;
 }

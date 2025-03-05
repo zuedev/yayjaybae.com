@@ -7,10 +7,10 @@ export default () => {
   const links = [
     { href: "/", label: "Home" },
     { href: "/reference", label: "Reference" },
-    { href: "/partnerships", label: "Partnerships" },
+    { href: "/lore", label: "Lore" },
     { href: "/fan-guide", label: "Fan Guide" },
     { href: "/gallery", label: "Gallery" },
-    { href: "/contact", label: "Contact" },
+    { href: "/credits", label: "Credits" },
   ];
 
   const pathname = usePathname();
