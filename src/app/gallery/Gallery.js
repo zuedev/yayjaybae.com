@@ -25,6 +25,7 @@ export default (props) => {
 
   return (
     <>
+      <h1 className="text-xl text-white mb-4">Select a folder:</h1>
       <select
         className="text-xl uppercase bg-black text-white p-2 rounded mb-4"
         onChange={(event) => {
@@ -32,7 +33,6 @@ export default (props) => {
         }}
         value={currentGallery}
       >
-        <option value="">Select a gallery</option>
         {galleryFolders.map((folder) => (
           <option key={folder} value={folder}>
             {folder}
