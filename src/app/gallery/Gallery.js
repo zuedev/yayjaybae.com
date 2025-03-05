@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 export default (props) => {
   const { galleryFolders, galleryImages } = props;
 
-  const [currentGallery, setGalleryFolders] = useState("");
+  const [currentGallery, setGalleryFolders] = useState("YayJayBae");
   const [selectedImage, setSelectedImage] = useState(null);
 
   const closeModal = () => setSelectedImage(null);
@@ -30,6 +30,7 @@ export default (props) => {
         onChange={(event) => {
           setGalleryFolders(event.target.value);
         }}
+        value={currentGallery}
       >
         <option value="">Select a gallery</option>
         {galleryFolders.map((folder) => (
