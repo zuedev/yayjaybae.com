@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "motion/react";
-import Socials from "@/components/Socials";
 
 export default () => {
   const file = Math.random() > 0.5 ? "base" : "maid";
@@ -37,8 +36,6 @@ export default () => {
           </motion.div>
         </a>
       </div>
-
-      <Socials />
     </>
   );
 };

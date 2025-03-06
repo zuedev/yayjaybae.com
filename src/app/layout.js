@@ -2,6 +2,7 @@ import { Poetsen_One } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Head from "next/head";
+import Socials from "@/components/Socials";
 
 const FontMain = Poetsen_One({
   weight: "400",
@@ -29,6 +30,7 @@ export default ({ children }) => {
       <body className={`${FontMain.className} antialiased`}>
         <Navigation />
         {children}
+        <Socials />
       </body>
     </html>
   );
