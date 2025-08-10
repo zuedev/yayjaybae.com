@@ -32,6 +32,6 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: 424d9dabd39849818d9e22366a20e4d6
-          projectName: www-yayjaybae-com
+          projectName: www-yayjaybae-com-pages
           directory: out
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
