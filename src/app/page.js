@@ -21,7 +21,7 @@ export default () => {
 
         pattern: dubby.gg/discount/<code>?redirect=/products/<product>
       */}
-        <a href="https://www.dubby.gg/discount/yayjaybae?redirect=/products/dubble-trouble-yayjaybae-limited-edition-shaker">
+        {/* <a href="https://www.dubby.gg/discount/yayjaybae?redirect=/products/dubble-trouble-yayjaybae-limited-edition-shaker">
           <motion.div
             className="absolute bottom-20 left-0 z-10 flex flex-row items-center md:space-x-4 md:p-4 transform hover:scale-110 transition-transform"
             initial={{ left: "-100%" }}
@@ -34,7 +34,7 @@ export default () => {
               <span className="w-fit px-2 py-1 bg-black">order</span>
             </span>
           </motion.div>
-        </a>
+        </a> */}
       </div>
     </>
   );
