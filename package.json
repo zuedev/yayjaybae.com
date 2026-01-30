@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "npm run build && cp -r cloudflare/* out/ && npx wrangler pages publish out --account-id 424d9dabd39849818d9e22366a20e4d6 --project-name www-yayjaybae-com-pages --branch main"
   },
   "dependencies": {
     "motion": "^11.15.0",
