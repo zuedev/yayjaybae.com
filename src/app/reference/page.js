@@ -43,21 +43,31 @@ export default () => {
             Reference Sheet
           </p>
           <img
-            src={`/images/Human Full Reference.png`}
+            src={`/images/Regular_Ref.png`}
             className="h-full object-cover w-full col-span-1 md:col-span-6 cursor-pointer"
-            onClick={() => openModal(`/images/Human Full Reference.png`)}
+            onClick={() => openModal(`/images/Regular_Ref.png`)}
           />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-8 gap-8">
           <img
-            src={`/images/Furry Full Reference.png`}
+            src={`/images/Jester_Reference.png`}
             className="h-full object-cover w-full col-span-1 md:col-span-6 cursor-pointer"
-            onClick={() => openModal(`/images/Furry Full Reference.png`)}
+            onClick={() => openModal(`/images/Jester_Reference.png`)}
           />
           <p className="text-2xl md:text-4xl text-center col-span-1 md:col-span-2 flex flex-col justify-center items-center p-4">
             Furry Form <br />
             Reference Sheet
           </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-8 gap-8">
+          <p className="text-xl md:text-2xl text-center col-span-1 md:col-span-2 flex flex-col justify-center items-center p-4">
+            Note: Xenia's wings are always attached to her arms, NOT her back
+          </p>
+          <img
+            src={`/images/jaybaearmwing.png`}
+            className="h-full object-cover w-full col-span-1 md:col-span-6 cursor-pointer"
+            onClick={() => openModal(`/images/jaybaearmwing.png`)}
+          />
         </div>
       </div>
 
