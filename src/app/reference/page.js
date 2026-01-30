@@ -39,7 +39,7 @@ export default () => {
       <div className="min-h-screen p-8 space-y-8 flex flex-col justify-center items-center">
         <div className="grid grid-cols-1 md:grid-cols-8 gap-8">
           <p className="text-2xl md:text-4xl text-center col-span-1 md:col-span-2 flex flex-col justify-center items-center p-4">
-            Human Form <br />
+            Default <br />
             Reference Sheet
           </p>
           <img
@@ -55,7 +55,7 @@ export default () => {
             onClick={() => openModal(`/images/Jester_Reference.png`)}
           />
           <p className="text-2xl md:text-4xl text-center col-span-1 md:col-span-2 flex flex-col justify-center items-center p-4">
-            Furry Form <br />
+            Jester <br />
             Reference Sheet
           </p>
         </div>
