@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "npm run build && cp -r cloudflare/* out/ && npx wrangler pages publish out --account-id 424d9dabd39849818d9e22366a20e4d6 --project-name www-yayjaybae-com-pages --branch main"
+    "deploy": "npm run build && cp -r cloudflare/* out/ && npx wrangler pages publish out --project-name www-yayjaybae-com-pages --branch main",
+    "deploy:windows": "npm run build && xcopy cloudflare\\* out\\ /E /I /Y && npx wrangler pages publish out --project-name www-yayjaybae-com-pages --branch main"
   },
   "dependencies": {
     "motion": "^11.15.0",
