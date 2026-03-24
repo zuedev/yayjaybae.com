@@ -69,6 +69,17 @@ export default () => {
             onClick={() => openModal(`/images/jaybaearmwing.png`)}
           />
         </div>
+        <div className="grid grid-cols-1 md:grid-cols-8 gap-8">
+          <img
+            src={`/images/jonref.png`}
+            className="h-full object-cover w-full col-span-1 md:col-span-6 cursor-pointer"
+            onClick={() => openModal(`/images/jonref.png`)}
+          />
+          <p className="text-2xl md:text-4xl text-center col-span-1 md:col-span-2 flex flex-col justify-center items-center p-4">
+            Jon <br />
+            Reference Sheet
+          </p>
+        </div>
       </div>
 
       {isModalOpen && (
