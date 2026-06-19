@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>YayJayBae 💛🃏</title>
+    <link rel="icon" type="image/png" href="icon.png" />
     <style>
       /* import Poetsen One font */
       @import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap");
@@ -24,9 +25,18 @@
 
       /* base styles */
       html {
-        background: var(--pattern);
+        background-color: var(--pattern);
         color: var(--gold);
         font-family: "Poetsen One";
+      }
+
+      /* setup background pattern */
+      html {
+        background-image: url("background.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: repeat-y;
+        background-attachment: fixed;
       }
 
       /* hide scrollbar */
@@ -53,7 +63,17 @@
     </style>
   </head>
   <body>
-    <h1>Hello!</h1>
-    <p>I'm new! :3</p>
+    <main
+      style="
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      "
+    >
+      <img src="logo.png" alt="YayJayBae Logo" width="300" />
+      <h1>Coming Soon</h1>
+    </main>
   </body>
 </html>
