@@ -6,9 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "deploy": "npm run build && cp -r cloudflare/* out/ && npx wrangler pages publish out --project-name www-yayjaybae-com-pages --branch main",
-    "deploy:windows": "npm run build && xcopy cloudflare\\* out\\ /E /I /Y && npx wrangler pages publish out --project-name www-yayjaybae-com-pages --branch main"
+    "lint": "next lint"
   },
   "dependencies": {
     "motion": "^11.15.0",

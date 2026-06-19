@@ -1,0 +1,36 @@
+{
+  "$schema": "https://esm.sh/wrangler@4.90.1/config-schema.json",
+  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_date": "2025-02-05",
+  "account_id": "e2a610fb262cd2595a145899e862922f",
+  "name": "yayjaybae-com",
+  "main": "./server/index.js",
+  "assets": {
+    "directory": "./ASSETS/",
+    "not_found_handling": "single-page-application",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+  },
+  "observability": {
+    "enabled": true,
+  },
+  "routes": [
+    {
+      "pattern": "yayjaybae.com",
+      "custom_domain": true,
+    },
+    {
+      "pattern": "www.yayjaybae.com",
+      "custom_domain": true,
+    },
+    {
+      "pattern": "old.yayjaybae.com",
+      "custom_domain": true,
+    },
+    {
+      "pattern": "new.yayjaybae.com",
+      "custom_domain": true,
+    },
+  ],
+  "upload_source_maps": true,
+}
