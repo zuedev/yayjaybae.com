@@ -156,7 +156,7 @@
         text-align: center;
         background-color: var(--purple-dark);
         z-index: 10000;
-        position: fixed;
+        position: absolute;
         top: 0;
         left: 0;
         width: 100%;
@@ -179,72 +179,78 @@
       <img id="header-hero" src="assets/hero.png" />
       <img id="header-logo" src="assets/logo.png" />
     </header>
-    <!-- <section
-      id="about"
+    <main
       class="initHiddenFadeIn contained"
-      style="display: flex; flex-direction: row; align-items: center; gap: 20px"
+      style="display: flex; flex-direction: column; gap: 50px"
     >
-      <div style="flex: 1">
-        <h1>Hello, I'm Xenia!</h1>
-      </div>
-      <div style="flex: 1">
-        <div
-          style="
-            position: relative;
-            width: 100%;
-            max-width: 400px;
-            aspect-ratio: 1;
-            margin-left: auto;
-          "
-        >
-          <img
-            id="about-image-a"
-            src="assets/about-1.png"
-            style="
-              position: absolute;
-              inset: 0;
-              width: 100%;
-              height: 100%;
-              border-radius: 50%;
-              object-fit: cover;
-              transition: opacity 0.5s;
-            "
-          />
-          <img
-            id="about-image-b"
-            src="assets/about-2.png"
-            style="
-              position: absolute;
-              inset: 0;
-              width: 100%;
-              height: 100%;
-              border-radius: 50%;
-              object-fit: cover;
-              opacity: 0;
-              transition: opacity 0.5s;
-            "
-          />
+      <!-- <section
+        id="about"
+        style="
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 20px;
+        "
+      >
+        <div style="flex: 1">
+          <h1>Hello, I'm Xenia!</h1>
         </div>
-      </div>
-    </section> -->
-    <section
-      id="referenceSheets"
-      class="initHiddenFadeIn contained"
-      style="
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-      "
-    >
-      <div style="text-align: center">
-        <h2>Reference Sheet</h2>
-        <p>Click on the image below to view in full size!</p>
-      </div>
-      <a href="assets/Reference_Sheet.png" target="_blank">
-        <img src="assets/Reference_Sheet.png" style="width: 100%" />
-      </a>
-    </section>
+        <div style="flex: 1">
+          <div
+            style="
+              position: relative;
+              width: 100%;
+              max-width: 400px;
+              aspect-ratio: 1;
+              margin-left: auto;
+            "
+          >
+            <img
+              id="about-image-a"
+              src="assets/about-1.png"
+              style="
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                transition: opacity 0.5s;
+              "
+            />
+            <img
+              id="about-image-b"
+              src="assets/about-2.png"
+              style="
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: opacity 0.5s;
+              "
+            />
+          </div>
+        </div>
+      </section> -->
+      <section
+        id="referenceSheets"
+        class="initHiddenFadeIn contained"
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+          padding-bottom: 2500px;
+        "
+      >
+        <div style="text-align: center">
+          <h2>Reference Sheet</h2>
+          <p>Click on the image below to view in full size!</p>
+        </div>
+        <a href="assets/Reference_Sheet.png" target="_blank">
+          <img src="assets/Reference_Sheet.png" style="width: 100%" />
+        </a>
+      </section>
+    </main>
     <script>
       // show the nav logo only after the hero image and header logo have scrolled out of view
       const navLogo = document.getElementById("nav-logo");
@@ -291,5 +297,96 @@
         aIsFront = !aIsFront;
       }, 5000);
     </script>
+
+    <!-- start of sparkles -->
+    <div id="sparkle-container"></div>
+    <style>
+      /* The main overlay */
+      #sparkle-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none; /* CRITICAL: Allows users to click through */
+        z-index: -1;
+        overflow: hidden;
+      }
+
+      /* Individual sparkle styling */
+      .sparkle-particle {
+        position: absolute;
+        /* A vibrant base pink/red for the hue filter to rotate from */
+        background-color: hsl(340, 100%, 65%);
+        border-radius: 50%;
+        /* A glowing aura that matches the base color */
+        box-shadow: 0 0 6px 1px hsla(340, 100%, 65%, 0.8);
+        opacity: 0;
+
+        /* Applies both the twinkle size/opacity and the color shift */
+        animation:
+          twinkle var(--duration) ease-in-out infinite,
+          rainbow var(--hue-speed) linear infinite;
+
+        animation-delay: var(--delay), var(--hue-delay);
+      }
+
+      /* The glowing and sizing animation */
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0;
+          transform: scale(0.5);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.2);
+        }
+      }
+
+      /* The rainbow color-shifting animation */
+      @keyframes rainbow {
+        0% {
+          filter: hue-rotate(0deg);
+        }
+        100% {
+          filter: hue-rotate(360deg);
+        }
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const container = document.getElementById("sparkle-container");
+        const particleCount = 150;
+
+        for (let i = 0; i < particleCount; i++) {
+          const sparkle = document.createElement("div");
+          sparkle.classList.add("sparkle-particle");
+
+          // Randomize position
+          sparkle.style.left = `${Math.random() * 100}%`;
+          sparkle.style.top = `${Math.random() * 100}%`;
+
+          // Randomize size (between 1px and 3px)
+          const size = Math.random() * 2 + 1;
+          sparkle.style.width = `${size}px`;
+          sparkle.style.height = `${size}px`;
+
+          // Twinkle timing variables
+          sparkle.style.setProperty("--duration", `${Math.random() * 3 + 2}s`);
+          sparkle.style.setProperty("--delay", `${Math.random() * 5}s`);
+
+          // Rainbow shift timing variables
+          // hue-speed controls how fast the colors change (2s to 6s)
+          sparkle.style.setProperty("--hue-speed", `${Math.random() * 4 + 2}s`);
+          // A negative delay forces the animation to start partway through,
+          // ensuring every sparkle spawns as a random color immediately.
+          sparkle.style.setProperty("--hue-delay", `-${Math.random() * 10}s`);
+
+          container.appendChild(sparkle);
+        }
+      });
+    </script>
+    <!-- end of sparkles -->
   </body>
 </html>
