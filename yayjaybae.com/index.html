@@ -30,6 +30,12 @@
         font-family: "Poetsen One";
       }
 
+      /* normalize body */
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
       /* setup background pattern */
       html {
         background-image: url("assets/background.png");
@@ -49,31 +55,235 @@
         min-height: 100vh;
       }
 
-      /* page fade in */
-      body {
-        opacity: 0;
-        animation: fadeIn 1s forwards;
-      }
-
+      /* fade in animation */
       @keyframes fadeIn {
         to {
           opacity: 1;
         }
       }
+
+      /* header */
+      header {
+        position: relative;
+        margin-bottom: 25vh; /* equal to 50vh hero image height + 25vh margin due to logo */
+      }
+
+      /* hero image */
+      header #header-hero {
+        height: 50vh;
+        width: 100%;
+        object-fit: cover;
+        opacity: 0;
+        animation: fadeIn 1s forwards;
+        animation-delay: 2s;
+      }
+
+      @media (max-width: 800px) {
+        header #header-hero {
+          height: 35vh;
+        }
+      }
+
+      /* logo image */
+      header #header-logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        max-width: 750px;
+        opacity: 0;
+        animation: fadeIn 3s forwards;
+      }
+
+      @media (max-width: 800px) {
+        header #header-logo {
+          max-width: 90%;
+        }
+      }
+
+      /* fade in animation for elements with initHiddenFadeIn class */
+      .initHiddenFadeIn {
+        opacity: 0;
+        animation: fadeIn 1s forwards;
+        animation-delay: 3s;
+      }
+
+      /* container */
+      .contained {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* navigation */
+      nav {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        z-index: 1000;
+        max-height: 10vh;
+      }
+
+      nav #nav-logo {
+        height: calc(
+          10vh + 40px + 20px
+        ); /* 10vh + padding + image white space */
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      /* reveal the nav logo once the hero image has scrolled out of view */
+      nav #nav-logo.visible {
+        opacity: 1;
+      }
+
+      /* style links */
+      a {
+        color: var(--collar-light);
+        text-decoration: wavy underline;
+      }
     </style>
   </head>
   <body>
-    <main
+    <div
+      style="
+        padding: 10px;
+        text-align: center;
+        background-color: var(--purple-dark);
+      "
+    >
+      <div class="contained">
+        <span>We're still getting things ready here!</span>
+        <a href="https://old.yayjaybae.com">Return to old website</a>
+      </div>
+    </div>
+    <nav>
+      <div id="nav-left"></div>
+      <div id="nav-center">
+        <img id="nav-logo" src="assets/logo.png" />
+      </div>
+      <div id="nav-right"></div>
+    </nav>
+    <header>
+      <img id="header-hero" src="assets/hero.png" />
+      <img id="header-logo" src="assets/logo.png" />
+    </header>
+    <!-- <section
+      id="about"
+      class="initHiddenFadeIn contained"
+      style="display: flex; flex-direction: row; align-items: center; gap: 20px"
+    >
+      <div style="flex: 1">
+        <h1>Hello, I'm Xenia!</h1>
+      </div>
+      <div style="flex: 1">
+        <div
+          style="
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 1;
+            margin-left: auto;
+          "
+        >
+          <img
+            id="about-image-a"
+            src="assets/about-1.png"
+            style="
+              position: absolute;
+              inset: 0;
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+              object-fit: cover;
+              transition: opacity 0.5s;
+            "
+          />
+          <img
+            id="about-image-b"
+            src="assets/about-2.png"
+            style="
+              position: absolute;
+              inset: 0;
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+              object-fit: cover;
+              opacity: 0;
+              transition: opacity 0.5s;
+            "
+          />
+        </div>
+      </div>
+    </section> -->
+    <section
+      id="referenceSheets"
+      class="initHiddenFadeIn contained"
       style="
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        height: 100vh;
+        gap: 20px;
       "
     >
-      <img src="assets/logo.png" alt="YayJayBae Logo" width="300" />
-      <h1>Coming Soon</h1>
-    </main>
+      <div style="text-align: center">
+        <h2>Reference Sheet</h2>
+        <p>Click on the image below to view in full size!</p>
+      </div>
+      <a href="assets/Reference_Sheet.png" target="_blank">
+        <img src="assets/Reference_Sheet.png" style="width: 100%" />
+      </a>
+    </section>
+    <script>
+      // show the nav logo only after the hero image and header logo have scrolled out of view
+      const navLogo = document.getElementById("nav-logo");
+      const headerElements = [
+        document.getElementById("header-hero"),
+        document.getElementById("header-logo"),
+      ];
+
+      const visibleHeaderElements = new Set();
+      const headerObserver = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              visibleHeaderElements.add(entry.target);
+            } else {
+              visibleHeaderElements.delete(entry.target);
+            }
+          }
+          navLogo.classList.toggle("visible", visibleHeaderElements.size === 0);
+        },
+        { threshold: 0 },
+      );
+
+      headerElements.forEach((element) => headerObserver.observe(element));
+    </script>
+    <script>
+      // crossfades the about image every few seconds using a double-buffer
+      const aboutImages = ["assets/about-1.png", "assets/about-2.png"];
+      const imgA = document.getElementById("about-image-a");
+      const imgB = document.getElementById("about-image-b");
+      let currentIndex = 0;
+      let aIsFront = true;
+
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % aboutImages.length;
+        const front = aIsFront ? imgA : imgB;
+        const back = aIsFront ? imgB : imgA;
+
+        // preload next image in the back layer, then crossfade
+        back.src = aboutImages[currentIndex];
+        front.style.opacity = 0;
+        back.style.opacity = 1;
+
+        aIsFront = !aIsFront;
+      }, 5000);
+    </script>
   </body>
 </html>
