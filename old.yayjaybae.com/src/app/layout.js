@@ -3,6 +3,8 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Head from "next/head";
 import Socials from "@/components/Socials";
+import { Suspense } from "react";
+import JesterCardModal from "@/components/JesterCardModal";
 
 const FontMain = Poetsen_One({
   weight: "400",
@@ -51,6 +53,9 @@ export default ({ children }) => {
         <Navigation />
         {children}
         <Socials />
+        <Suspense>
+          <JesterCardModal />
+        </Suspense>
       </body>
     </html>
   );
