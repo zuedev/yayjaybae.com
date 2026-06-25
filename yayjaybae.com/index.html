@@ -492,13 +492,52 @@
         >
           ✕
         </button>
-        <video
-          id="jester-card-video"
-          src="https://yayjaybae.r2.zue.dev/JesterCardVideo.mp4"
-          controls
-          autoplay
-          style="max-width: 80vw; max-height: 70vh; border-radius: 8px"
-        ></video>
+        <div style="position: relative; display: inline-block">
+          <video
+            id="jester-card-video"
+            src="https://yayjaybae.r2.zue.dev/JesterCardVideo.mp4"
+            controls
+            style="
+              max-width: 80vw;
+              max-height: 70vh;
+              border-radius: 8px;
+              display: block;
+            "
+          ></video>
+          <button
+            id="jester-card-play"
+            aria-label="Play"
+            style="
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              background: rgba(0, 0, 0, 0.6);
+              border: 3px solid var(--gold);
+              border-radius: 50%;
+              width: 72px;
+              height: 72px;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              transition:
+                background 0.2s,
+                transform 0.2s;
+              pointer-events: auto;
+            "
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="32"
+              height="32"
+              fill="var(--gold)"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <polygon points="6,3 20,12 6,21" />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
     <script>
@@ -508,17 +547,40 @@
           const modal = document.getElementById("jester-card-modal");
           modal.style.display = "flex";
 
+          const video = document.getElementById("jester-card-video");
+          const playBtn = document.getElementById("jester-card-play");
+
+          function hidePlayBtn() {
+            playBtn.style.display = "none";
+          }
+
+          function showPlayBtn() {
+            playBtn.style.display = "flex";
+          }
+
+          playBtn.addEventListener("click", function () {
+            video.play();
+          });
+
+          video.addEventListener("play", hidePlayBtn);
+          video.addEventListener("pause", showPlayBtn);
+          video.addEventListener("ended", showPlayBtn);
+
           document
             .getElementById("jester-card-close")
             .addEventListener("click", function () {
               modal.style.display = "none";
-              document.getElementById("jester-card-video").pause();
+              video.pause();
+              video.currentTime = 0;
+              showPlayBtn();
             });
 
           modal.addEventListener("click", function (e) {
             if (e.target === modal) {
               modal.style.display = "none";
-              document.getElementById("jester-card-video").pause();
+              video.pause();
+              video.currentTime = 0;
+              showPlayBtn();
             }
           });
         }
