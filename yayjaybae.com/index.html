@@ -336,6 +336,56 @@
 
       headerElements.forEach((element) => headerObserver.observe(element));
     </script>
+    <style>
+      .about-sparkle {
+        position: absolute;
+        background-color: hsl(50, 100%, 65%);
+        border-radius: 50%;
+        box-shadow: 0 0 8px 2px hsla(50, 100%, 65%, 0.9);
+        pointer-events: none;
+        z-index: 10;
+        animation: aboutSparkleOut 0.9s ease-out forwards;
+        filter: hue-rotate(var(--hue, 0deg));
+      }
+
+      @keyframes aboutSparkleOut {
+        0% {
+          opacity: 1;
+          transform: translate(0, 0) scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: translate(var(--tx), var(--ty)) scale(0);
+        }
+      }
+
+      @keyframes aboutMirage {
+        0% {
+          filter: blur(0px) brightness(1);
+          transform: scale(1) skewY(0deg);
+        }
+        20% {
+          filter: blur(2px) brightness(1.2);
+          transform: scale(1.02) skewY(0.5deg);
+        }
+        45% {
+          filter: blur(4px) brightness(1.4);
+          transform: scale(1.04) skewY(-0.6deg);
+        }
+        70% {
+          filter: blur(2px) brightness(1.2);
+          transform: scale(1.02) skewY(0.4deg);
+        }
+        100% {
+          filter: blur(0px) brightness(1);
+          transform: scale(1) skewY(0deg);
+        }
+      }
+
+      .about-mirage-active {
+        animation: aboutMirage 0.8s ease-in-out;
+      }
+    </style>
     <script>
       // crossfades the about image every few seconds using a double-buffer
       const aboutImages = ["assets/about-1.png", "assets/about-2.png"];
@@ -343,6 +393,41 @@
       const imgB = document.getElementById("about-image-b");
       let currentIndex = 0;
       let aIsFront = true;
+
+      function triggerMirage() {
+        const container = imgA.parentElement;
+        container.classList.remove("about-mirage-active");
+        void container.offsetWidth; // force reflow to restart animation
+        container.classList.add("about-mirage-active");
+        container.addEventListener(
+          "animationend",
+          () => {
+            container.classList.remove("about-mirage-active");
+          },
+          { once: true },
+        );
+      }
+
+      function spawnImageSparkles() {
+        const container = imgA.parentElement;
+        for (let i = 0; i < 22; i++) {
+          const sparkle = document.createElement("div");
+          sparkle.classList.add("about-sparkle");
+          sparkle.style.left = `${Math.random() * 100}%`;
+          sparkle.style.top = `${Math.random() * 100}%`;
+          const size = Math.random() * 6 + 3;
+          sparkle.style.width = `${size}px`;
+          sparkle.style.height = `${size}px`;
+          const angle = Math.random() * Math.PI * 2;
+          const distance = 50 + Math.random() * 90;
+          sparkle.style.setProperty("--tx", `${Math.cos(angle) * distance}px`);
+          sparkle.style.setProperty("--ty", `${Math.sin(angle) * distance}px`);
+          sparkle.style.setProperty("--hue", `${Math.random() * 360}deg`);
+          sparkle.style.animationDelay = `${Math.random() * 0.4}s`;
+          container.appendChild(sparkle);
+          sparkle.addEventListener("animationend", () => sparkle.remove());
+        }
+      }
 
       setInterval(() => {
         currentIndex = (currentIndex + 1) % aboutImages.length;
@@ -353,6 +438,8 @@
         back.src = aboutImages[currentIndex];
         front.style.opacity = 0;
         back.style.opacity = 1;
+        triggerMirage();
+        spawnImageSparkles();
 
         aIsFront = !aIsFront;
       }, 5000);
