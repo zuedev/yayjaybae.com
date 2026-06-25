@@ -19,3 +19,4 @@ xcopy "$ProjectRootPath\yayjaybae.com" "$ProjectRootPath\ASSETS\yayjaybae.com" /
 
 # return to root and deploy project
 cd $ProjectRootPath
+npx --yes wrangler@latest publish
