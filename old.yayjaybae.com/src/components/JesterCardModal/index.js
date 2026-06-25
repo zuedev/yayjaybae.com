@@ -62,7 +62,6 @@ export default function JesterCardModal() {
         <video
           src="https://yayjaybae.r2.zue.dev/JesterCardVideo.mp4"
           controls
-          autoPlay
           style={{
             maxWidth: "80vw",
             maxHeight: "70vh",

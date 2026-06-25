@@ -100,10 +100,9 @@ export default {
       case "yayjaybae.com":
         url.pathname = "/old.yayjaybae.com" + url.pathname;
         return environment.ASSETS.fetch(new Request(url, request));
-      case "new.yayjaybae.com": {
+      case "new.yayjaybae.com":
         url.pathname = "/yayjaybae.com" + url.pathname;
         return environment.ASSETS.fetch(new Request(url, request));
-      }
     }
 
     // default to 404 if no matching hostname is found
