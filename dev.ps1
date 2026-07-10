@@ -11,4 +11,4 @@ xcopy "$ProjectRootPath\sites\yayjaybae.com\out" "$ProjectRootPath\ASSETS\yayjay
 xcopy "$ProjectRootPath\sites\new-layout.yayjaybae.com" "$ProjectRootPath\ASSETS\new-layout.yayjaybae.com" /E /I /Y
 
 cd $ProjectRootPath
-npx --yes wrangler@latest deploy
+npx --yes wrangler@latest dev

@@ -92,8 +92,11 @@ export default {
       });
     }
 
+    console.log(url.hostname);
+
     // internal rewrite hostname dependent
     switch (url.hostname) {
+      case "127.0.0.1":
       case "yayjaybae-com.jaylaoftheday.workers.dev":
       case "www.yayjaybae.com":
       case "old.yayjaybae.com":
