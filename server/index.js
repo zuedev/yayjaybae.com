@@ -96,13 +96,18 @@ export default {
 
     // internal rewrite hostname dependent
     switch (url.hostname) {
+      // current
       case "127.0.0.1":
       case "yayjaybae-com.jaylaoftheday.workers.dev":
       case "www.yayjaybae.com":
-      case "old.yayjaybae.com":
       case "yayjaybae.com":
         url.pathname = "/yayjaybae.com" + url.pathname;
         return environment.ASSETS.fetch(new Request(url, request));
+      // old (non-jester)
+      case "old.yayjaybae.com":
+        url.pathname = "/old.yayjaybae.com" + url.pathname;
+        return environment.ASSETS.fetch(new Request(url, request));
+      // experimental new layout
       case "new.yayjaybae.com":
       case "new-layout.yayjaybae.com":
         url.pathname = "/new-layout.yayjaybae.com" + url.pathname;
