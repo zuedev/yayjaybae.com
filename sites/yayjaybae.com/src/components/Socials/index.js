@@ -39,7 +39,7 @@ export default () => {
     },
     {
       href: "/throne",
-      icon: "/images/throne.png",
+      icon: "/throne.png",
       title: "Throne",
     },
     {

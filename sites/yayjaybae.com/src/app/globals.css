@@ -26,6 +26,12 @@ body {
   animation: fadeIn 1s forwards;
 }
 
+main {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 0.5s;
+}
+
 @keyframes fadeIn {
   to {
     opacity: 1;
@@ -34,12 +40,6 @@ body {
 
 /* setup body default background */
 html {
-  background: linear-gradient(
-      45deg,
-      var(--yjb-yellow) 0%,
-      var(--yjb-blue-dark) 33%,
-      var(--yjb-blue-dark) 66%,
-      var(--yjb-blue-light) 100%
-    )
-    fixed;
+  background: url("/background.png") no-repeat center center fixed;
+  background-size: cover;
 }
