@@ -98,10 +98,11 @@ export default {
       case "www.yayjaybae.com":
       case "old.yayjaybae.com":
       case "yayjaybae.com":
-        url.pathname = "/old.yayjaybae.com" + url.pathname;
+        url.pathname = "/yayjaybae.com" + url.pathname;
         return environment.ASSETS.fetch(new Request(url, request));
       case "new.yayjaybae.com":
-        url.pathname = "/yayjaybae.com" + url.pathname;
+      case "new-layout.yayjaybae.com":
+        url.pathname = "/new-layout.yayjaybae.com" + url.pathname;
         return environment.ASSETS.fetch(new Request(url, request));
     }
 
