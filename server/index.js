@@ -92,8 +92,6 @@ export default {
       });
     }
 
-    console.log(url.hostname);
-
     // internal rewrite hostname dependent
     switch (url.hostname) {
       // current
