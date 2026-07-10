@@ -30,26 +30,6 @@ export default ({ children }) => {
         <link rel="preload" href="/images/duo-portrait/base.png" as="image" />
       </Head>
       <body className={`${FontMain.className} antialiased`}>
-        <div
-          style={{
-            padding: "10px",
-            textAlign: "center",
-            background: "var(--yjb-yellow)",
-            color: "var(--yjb-black)",
-          }}
-        >
-          <span>This is the old site!</span>{" "}
-          <a
-            style={{
-              color: "var(--yjb-blue-light)",
-              textDecoration: "wavy underline",
-            }}
-            href="https://new.yayjaybae.com"
-          >
-            Check out the new one
-          </a>{" "}
-          <span>(It's still under construction)</span>
-        </div>
         <Navigation />
         {children}
         <Socials />
