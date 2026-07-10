@@ -6,7 +6,7 @@ export default () => {
       <style jsx global>{`
           body {
             overflow: hidden;
-            background: url("/hero.png") no-repeat center center fixed;
+            background: url("/hero.png") no-repeat 40% center fixed;
             background-size: cover;
           }
         `}
