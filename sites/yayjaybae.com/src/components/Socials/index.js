@@ -50,18 +50,19 @@ export default () => {
   ];
 
   return (
-    <div className="p-4 bg-black text-white border-t-2 border-white fixed bottom-0 w-full">
-      <div className="flex flex-row justify-between">
+    <div className="fixed bottom-0 z-50 w-full bg-black/95 backdrop-blur text-white border-t-2 border-white p-3">
+      <div className="flex flex-row flex-wrap justify-center items-center gap-x-6 gap-y-2 max-w-3xl mx-auto">
         {socials.map((social) => (
           <Link
             href={social.href}
             key={social.title}
-            className="transform hover:scale-125 transition-transform"
+            title={social.title}
+            className="transition-transform duration-200 hover:scale-125 hover:-translate-y-0.5"
           >
             <img
               src={`${social.icon}`}
-              className="h-6 sm:h-8"
-              title={social.title}
+              alt={social.title}
+              className="h-6 sm:h-7"
             />
           </Link>
         ))}
