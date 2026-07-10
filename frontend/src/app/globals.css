@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* global variables */
+:root {
+  --yjb-black: #202534;
+  --yjb-yellow: #f3b226;
+  --yjb-blue-dark: #1f2c5b;
+  --yjb-blue-light: #2246c4;
+}
+
+/* hide scrollbar */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* body minimum height */
+body {
+  min-height: 100vh;
+}
+
+/* setup body default background */
+html {
+  background: url("/background.png") no-repeat center center fixed;
+  background-size: cover;
+}
