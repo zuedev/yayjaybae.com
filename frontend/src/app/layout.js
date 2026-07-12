@@ -21,10 +21,7 @@ export const metadata = {
 
 export default ({ children }) => {
   return (
-    <html
-      lang="en"
-      className="bg-white text-black dark:bg-black dark:text-white"
-    >
+    <html lang="en">
       <body className={`${FontMain.className}`}>
         <Navigation />
         <main>
