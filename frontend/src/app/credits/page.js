@@ -294,7 +294,7 @@ export default () => {
   ];
 
   return (
-    <div className="flex flex-col items-center pb-8">
+    <div className="flex flex-col items-center pb-24">
       {creditSections.map((section) => (
         <div
           key={section.title}
