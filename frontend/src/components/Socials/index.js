@@ -8,24 +8,9 @@ export default () => {
       title: "Twitch",
     },
     {
-      href: "/tiktok",
-      icon: "https://cdn.simpleicons.org/tiktok/white",
-      title: "TikTok",
-    },
-    {
       href: "/youtube",
       icon: "https://cdn.simpleicons.org/youtube",
       title: "YouTube",
-    },
-    {
-      href: "/bluesky",
-      icon: "https://cdn.simpleicons.org/bluesky",
-      title: "BlueSky",
-    },
-    {
-      href: "/twitter",
-      icon: "https://cdn.simpleicons.org/x/white",
-      title: "X/Twitter",
     },
     {
       href: "/instagram",
@@ -33,9 +18,24 @@ export default () => {
       title: "Instagram",
     },
     {
+      href: "/tiktok",
+      icon: "https://cdn.simpleicons.org/tiktok/white",
+      title: "TikTok",
+    },
+    {
+      href: "/bluesky",
+      icon: "https://cdn.simpleicons.org/bluesky",
+      title: "BlueSky",
+    },
+    {
       href: "/discord",
       icon: "https://cdn.simpleicons.org/discord",
       title: "Discord",
+    },
+    {
+      href: "/twitter",
+      icon: "https://cdn.simpleicons.org/x/white",
+      title: "X/Twitter",
     },
     {
       href: "/throne",
