@@ -14,7 +14,6 @@ const configuration = {
 
     // ko-fi
     { from: "/kofi", to: "https://ko-fi.com/yayjaybae" },
-    { from: "/shop", to: "https://ko-fi.com/yayjaybae/shop" },
 
     // throne
     { from: "/throne", to: "https://throne.com/yayjaybae/wishlist" },
@@ -58,6 +57,7 @@ const configuration = {
     // fourthwall
     { from: "/fourthwall", to: "https://fourthwall.yayjaybae.com" },
     { from: "/store", to: "/fourthwall" },
+    { from: "/shop", to: "/fourthwall" },
   ],
 };
 
