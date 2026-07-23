@@ -2,12 +2,12 @@ const configuration = {
   redirects: [
     // x / twitter
     { from: "/x", to: "https://x.com/yayjaybae" },
-    { from: "/twitter", to: "/x" },
+    { from: "/twitter", to: "https://x.com/yayjaybae" },
 
     // twitch
     { from: "/twitch", to: "https://www.twitch.tv/yayjaybae" },
-    { from: "/live", to: "/twitch" },
-    { from: "/ttv", to: "/twitch" },
+    { from: "/live", to: "https://www.twitch.tv/yayjaybae" },
+    { from: "/ttv", to: "https://www.twitch.tv/yayjaybae" },
 
     // youtube
     { from: "/youtube", to: "https://www.youtube.com/@yayjaybae" },
@@ -23,14 +23,14 @@ const configuration = {
 
     // instagram
     { from: "/instagram", to: "https://www.instagram.com/yayjaybae" },
-    { from: "/insta", to: "/instagram" },
+    { from: "/insta", to: "https://www.instagram.com/yayjaybae" },
 
     // tiktok
     { from: "/tiktok", to: "https://www.tiktok.com/@yayjaybae" },
 
     // bluesky
     { from: "/bluesky", to: "https://bsky.app/profile/yayjaybae.com" },
-    { from: "/bsky", to: "/bluesky" },
+    { from: "/bsky", to: "https://bsky.app/profile/yayjaybae.com" },
 
     // dubby
     {
@@ -52,13 +52,13 @@ const configuration = {
 
     // vrchat
     { from: "/vrchat", to: "https://vrc.group/YAYJAY.9440" },
-    { from: "/vrc", to: "/vrchat" },
+    { from: "/vrc", to: "https://vrc.group/YAYJAY.9440" },
 
     // fourthwall
     { from: "/fourthwall", to: "https://fourthwall.yayjaybae.com" },
-    { from: "/store", to: "/fourthwall" },
-    { from: "/shop", to: "/fourthwall" },
-    { from: "/merch", to: "/fourthwall" }
+    { from: "/store", to: "https://fourthwall.yayjaybae.com" },
+    { from: "/shop", to: "https://fourthwall.yayjaybae.com" },
+    { from: "/merch", to: "https://fourthwall.yayjaybae.com" }
   ],
 };
 
