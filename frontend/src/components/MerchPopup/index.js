@@ -8,6 +8,7 @@ const DISMISSED_KEY = "yjb-merch-popup-dismissed";
 export default () => {
   const [mounted, setMounted] = useState(false);
   const [visible, setVisible] = useState(false);
+  const [shake, setShake] = useState(false);
 
   useEffect(() => {
     let dismissed = false;
@@ -20,9 +21,13 @@ export default () => {
     if (dismissed) return;
 
     setMounted(true);
-    const timeout = setTimeout(() => setVisible(true), 800);
+    const showTimeout = setTimeout(() => setVisible(true), 800);
+    const shakeTimeout = setTimeout(() => setShake(true), 1300);
 
-    return () => clearTimeout(timeout);
+    return () => {
+      clearTimeout(showTimeout);
+      clearTimeout(shakeTimeout);
+    };
   }, []);
 
   const handleClose = () => {
@@ -41,13 +46,15 @@ export default () => {
 
   return (
     <div
-      className={`fixed z-40 bottom-24 inset-x-4 sm:inset-x-auto sm:right-6 sm:w-80 transition-all duration-300 ease-out ${
-        visible
-          ? "opacity-100 translate-y-0"
-          : "opacity-0 translate-y-6 pointer-events-none"
-      }`}
+      className={`fixed z-40 bottom-24 inset-x-4 sm:inset-x-auto sm:left-1/2 sm:-translate-x-1/2 sm:w-80 transition-all duration-300 ease-out ${visible
+        ? "opacity-100 translate-y-0"
+        : "opacity-0 translate-y-6 pointer-events-none"
+        }`}
     >
-      <div className="relative bg-black/95 backdrop-blur text-white border-2 border-[var(--yjb-yellow)] rounded-xl shadow-lg shadow-black/50 p-4 pr-9">
+      <div
+        className={`relative bg-black/95 backdrop-blur text-white border-2 border-[var(--yjb-yellow)] rounded-xl shadow-lg shadow-black/50 p-4 pr-9 ${shake ? "animate-shake" : ""
+          }`}
+      >
         <button
           type="button"
           onClick={handleClose}
