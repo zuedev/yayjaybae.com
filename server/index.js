@@ -58,6 +58,7 @@ const configuration = {
     { from: "/fourthwall", to: "https://fourthwall.yayjaybae.com" },
     { from: "/store", to: "/fourthwall" },
     { from: "/shop", to: "/fourthwall" },
+    { from: "/merch", to: "/fourthwall" },
   ],
 };
 
