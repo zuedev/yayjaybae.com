@@ -2,7 +2,6 @@ import { Poetsen_One } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Socials from "@/components/Socials";
-import MerchPopup from "@/components/MerchPopup";
 import { Suspense } from "react";
 import JesterCardModal from "@/components/JesterCardModal";
 
@@ -27,7 +26,6 @@ export default ({ children }) => {
         <Navigation />
         <main>{children}</main>
         <Socials />
-        <MerchPopup />
         <Suspense>
           <JesterCardModal />
         </Suspense>
