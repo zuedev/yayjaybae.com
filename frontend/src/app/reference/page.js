@@ -1,9 +1,15 @@
 export default () => {
   return (
     <>
-      <a href="/Reference_Sheet.png" target="_blank" rel="noopener noreferrer">
+      <a href="/Jay_ref2.png" target="_blank" rel="noopener noreferrer">
         <img
-          src={`/Reference_Sheet.png`}
+          src={`/Jay_ref2.png`}
+          className="h-full object-cover w-full col-span-1 md:col-span-6"
+        />
+      </a>
+      <a href="/Xenia_ref2.png" target="_blank" rel="noopener noreferrer">
+        <img
+          src={`/Xenia_ref2.png`}
           className="h-full object-cover w-full col-span-1 md:col-span-6"
         />
       </a>
